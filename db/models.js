@@ -11,15 +11,26 @@ const userSchema = new Schema({
 
 const reviewSchema = new Schema({
   user: String,
-  date: Date,
+  date: {
+    type: Date,
+    default: new Date()
+  },
+  workDate: Date,
   body: String,
   title: String,
-  img: String
+  img: [String],
+  categories: [String],
+  city: String,
+  state: String,
 })
 
 const jobSchema = new Schema({
   title: String,
-  address: String,
+  address1: String,
+  address2: String,
+  city: String,
+  state: String,
+  zip: String,
   client: String,
   assignedEmployee: {
     type: String,
