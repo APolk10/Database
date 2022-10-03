@@ -1,11 +1,12 @@
 const db = require('../../db/connect');
+const {Jobs} = require('../models');
 
 const jobControllers = {
   // Create a new job
-  newJob: (jobInfo) => (
-
+  newJob: (jobInfo) => {
+    Jobs.create(jobInfo);
     console.log('it works!')
-  ),
+  },
 
   // Edit a job
 

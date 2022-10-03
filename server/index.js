@@ -10,8 +10,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get('/get', (req, res) => {
-  res.send(controller.newJob());
+app.post('/addjob', (req, res) => {
+  console.log(req.body);
+  res.send(req.body);
 })
 
 const port = 8080;
