@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('../database/db');
-const controller = require('../database/controllers/jobs');
-const model = require('../database/models');
+const db = require('../db/connect');
+const controller = require('../db/controllers/jobs');
+const model = require('../db/models');
 const {Users, Reviews, Jobs, Tools} = model;
 
 const app = express();

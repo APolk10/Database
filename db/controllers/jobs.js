@@ -1,8 +1,9 @@
-const db = require('../../database/db');
+const db = require('../../db/connect');
 
 const jobControllers = {
   // Create a new job
   newJob: (jobInfo) => (
+
     console.log('it works!')
   ),
 
