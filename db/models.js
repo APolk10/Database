@@ -22,7 +22,7 @@ const jobSchema = new Schema({
   address: String,
   client: String,
   assignedEmployee: String,
-  media: String,
+  media: [String],
   description: String,
   categories: [String],
   date: Date,

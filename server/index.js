@@ -11,8 +11,9 @@ app.use(express.json());
 app.use(cors());
 
 app.post('/addjob', (req, res) => {
-  console.log(req.body);
-  res.send(req.body);
+  controller.newJob(req.body)
+    .then(() => res.status(201).send('Job Added'))
+    .catch((err) => res.status(400).send(err));
 })
 
 const port = 8080;
