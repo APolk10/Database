@@ -21,11 +21,17 @@ const jobSchema = new Schema({
   title: String,
   address: String,
   client: String,
-  assignedEmployee: String,
+  assignedEmployee: {
+    type: String,
+    default: null
+  },
   media: [String],
   description: String,
   categories: [String],
-  date: Date,
+  date: {
+    type: Date,
+    default: new Date()
+  },
   complete: {type: Boolean, default: false}
 })
 
