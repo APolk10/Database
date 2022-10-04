@@ -1,7 +1,10 @@
 const express = require('express');
 const cors = require('cors');
 const db = require('../db/connect');
-const controller = require('../db/controllers/jobs');
+const jobControllers = require('../db/controllers/jobs');
+const reviewsControllers = require('../db/controllers/reviews');
+const toolsControllers = require('../db/controllers/tools');
+const usersControllers = require('../db/controllers/users');
 const model = require('../db/models');
 const {Users, Reviews, Jobs, Tools} = model;
 
@@ -11,8 +14,20 @@ app.use(express.json());
 app.use(cors());
 
 app.post('/addjob', (req, res) => {
-  controller.newJob(req.body)
+  jobControllers.newJob(req.body)
     .then(() => res.status(201).send('Job Added'))
+    .catch((err) => res.status(400).send(err));
+})
+
+app.post('/addreview', (req, res) => {
+  reviewsControllers.addNewReview(req.body)
+    .then(() => res.status(201).send('Review Added'))
+    .catch((err) => res.status(400).send(err));
+})
+
+app.get('/reviews', (req, res) => {
+  reviewsControllers.getAllReviews()
+    .then((response) => res.status(200).send(response))
     .catch((err) => res.status(400).send(err));
 })
 
