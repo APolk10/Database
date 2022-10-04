@@ -9,7 +9,7 @@ const jobControllers = {
   // editJob: (jobInfo) => (Jobs.findOneAndUpdate()),
 
   // Find all jobs
-  getJobs: () => Jobs.find({}),
+  getAllJobs: () => Jobs.find({}),
 
   // Find jobs published by a specific user
 

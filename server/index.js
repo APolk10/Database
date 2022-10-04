@@ -15,6 +15,11 @@ app.post('/addjob', (req, res) => {
     .then(() => res.status(201).send('Job Added'))
     .catch((err) => res.status(400).send(err));
 })
+app.get('/getAllJobs', (req, res) => {
+  controller.getAllJobs()
+    .then((response) => res.status(200).send(response))
+    .catch((err) => res.status(400).send(response));
+})
 
 const port = 8080;
 
