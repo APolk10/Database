@@ -48,6 +48,12 @@ app.get('/reviews', (req, res) => {
     .catch((err) => res.status(400).send(err));
 })
 
+app.get('/filterreviews/:category', (req, res) => {
+  reviewsControllers.getFilteredReviews(req.params)
+    .then((response) => res.status(200).send(response))
+    .catch((err) => res.status(400).send(err));
+})
+
 const port = 8080;
 
 app.listen(port, console.log(`listening on port ${port}`));
