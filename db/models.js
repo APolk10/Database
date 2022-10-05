@@ -5,8 +5,11 @@ const userSchema = new Schema({
   firstName: String,
   lastName: String,
   email: String,
-  employeeId: Number,
   accessLevel: String,
+  hours: {
+    type: Number,
+    default: 40
+  }
 })
 
 const reviewSchema = new Schema({

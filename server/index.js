@@ -23,6 +23,10 @@ app.get('/getAllJobs', (req, res) => {
     .then((response) => res.status(200).send(response))
     .catch((err) => res.status(400).send(response));
 })
+app.put('/addNotes', (req, res) => {
+  console.log(req.body);
+  res.send('will update notes');
+})
 
 app.post('/addreview', (req, res) => {
   reviewsControllers.addNewReview(req.body)
