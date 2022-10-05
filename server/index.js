@@ -23,6 +23,11 @@ app.get('/getAllJobs', (req, res) => {
     .then((response) => res.status(200).send(response))
     .catch((err) => res.status(400).send(response));
 })
+app.get('/getJobs/:email', (req, res) => {
+  jobControllers.userJobs(req.params.email)
+    .then((response) => res.status(200).send(response))
+    .catch((err) => res.status(400).send(err));
+})
 
 app.post('/addreview', (req, res) => {
   reviewsControllers.addNewReview(req.body)
