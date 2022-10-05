@@ -47,7 +47,10 @@ const jobSchema = new Schema({
     default: new Date()
   },
   complete: {type: Boolean, default: false},
-  notes: [String]
+  notes: [{
+    note: String,
+    img: [String]
+  }]
 })
 
 const toolSchema = new Schema({

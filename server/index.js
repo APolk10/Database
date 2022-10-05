@@ -36,6 +36,12 @@ app.get('/getJobs/:email', (req, res) => {
     .catch((err) => res.status(400).send(err));
 })
 
+app.get('/getJobs/employee/:name', (req, res) => {
+  jobControllers.employeeJobs(req.params.name)
+    .then((response) => res.status(200).send(response))
+    .catch((err) => res.status(400).send(err));
+})
+
 app.post('/addreview', (req, res) => {
   reviewsControllers.addNewReview(req.body)
     .then(() => res.status(201).send('Review Added'))
