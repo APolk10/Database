@@ -60,6 +60,10 @@ app.get('/filterreviews/:category', (req, res) => {
     .catch((err) => res.status(400).send(err));
 })
 
+app.get('/tools/:category', (req, res) => {
+  toolsControllers.getTools(req.params.category)
+})
+
 const port = 8080;
 
 app.listen(port, console.log(`listening on port ${port}`));
