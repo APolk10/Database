@@ -52,8 +52,8 @@ const jobSchema = new Schema({
     img: [String]
   }],
   coordinates: {
-    lng: mongoose.Decimal128,
-    lat: mongoose.Decimal128
+    lat: String,
+    lng: String
   }
 })
 
