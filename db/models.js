@@ -50,7 +50,11 @@ const jobSchema = new Schema({
   notes: [{
     note: String,
     img: [String]
-  }]
+  }],
+  coordinates: {
+    lng: mongoose.Decimal128,
+    lat: mongoose.Decimal128
+  }
 })
 
 const toolSchema = new Schema({
